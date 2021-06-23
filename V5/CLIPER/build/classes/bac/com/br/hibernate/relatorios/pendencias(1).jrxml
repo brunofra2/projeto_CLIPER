@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pendencias" language="groovy" pageWidth="595" pageHeight="842" columnWidth="483" leftMargin="56" rightMargin="56" topMargin="56" bottomMargin="56" uuid="43943356-45a2-4dec-852f-82f7ada6516a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="pendencias" class="java.lang.String"/>
+	<parameter name="id" class="java.lang.Long">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagem" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select DATE_FORMAT(treinamento.data_treinamento,"%d/%m/%Y") as data,colaborador.nome,colaborador.registro from treinamento,colaborador,treinamento_colaborador where treinamento.id = treinamento_colaborador.Treinamento_id and treinamento_colaborador.colaborador_id = colaborador.id and colaborador.id =$P{id}  order by treinamento.data_treinamento desc limit 1]]>
+	</queryString>
+	<field name="data" class="java.lang.String"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="registro" class="java.lang.String"/>
+	<group name="colaborador">
+		<groupExpression><![CDATA[$F{nome}]]></groupExpression>
+		<groupHeader>
+			<band height="21">
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="316" height="20" uuid="a2355e24-7d0d-4aa3-aa4f-2bd8001640a3"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Colaborador: "+$F{nome}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="316" y="0" width="167" height="20" uuid="bb1e309d-517d-465e-86ee-3a738672815f"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA["RE: "+$F{registro}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="1">
+				<line>
+					<reportElement x="0" y="0" width="483" height="1" uuid="d3b7ade9-2d96-4e80-9aad-ed99d4e18d42"/>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<title>
+		<band height="69" splitType="Stretch">
+			<staticText>
+				<reportElement x="75" y="0" width="408" height="57" uuid="07e4870f-12f4-4392-b7e7-5402f313c317"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relação de Treinamentos Pendentes]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="75" height="57" uuid="e30946be-983e-4c74-93d4-3e98617fe731"/>
+				<imageExpression><![CDATA[$P{imagem}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="483" height="1" uuid="ca69d70b-997e-4283-8ce2-35dc3ef8ff9f"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="1" width="483" height="20" uuid="3ef731c6-c875-437e-98d5-2a5e515e89d5"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$P{pendencias}.replace(",","\n")]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="33079297-837d-4db9-b474-7f33f79d25bd"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[setembro/2014]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

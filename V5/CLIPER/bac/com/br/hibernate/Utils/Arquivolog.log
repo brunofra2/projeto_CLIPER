@@ -1,0 +1,170 @@
+2015-09-02 10:02:11,862 [AWT-EventQueue-0]  INFO org.hibernate.annotations.common.Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2015-09-02 10:02:11,893 [AWT-EventQueue-0]  INFO org.hibernate.Version:41 - HHH000412: Hibernate Core {4.2.6.Final}
+2015-09-02 10:02:11,893 [AWT-EventQueue-0]  INFO org.hibernate.cfg.Environment:238 - HHH000206: hibernate.properties not found
+2015-09-02 10:02:11,893 [AWT-EventQueue-0]  INFO org.hibernate.cfg.Environment:345 - HHH000021: Bytecode provider name : javassist
+2015-09-02 10:02:15,409 [AWT-EventQueue-0]  INFO org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl:98 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-09-02 10:02:15,409 [AWT-EventQueue-0]  INFO org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl:134 - HHH000115: Hibernate connection pool size: 20
+2015-09-02 10:02:15,409 [AWT-EventQueue-0]  INFO org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl:137 - HHH000006: Autocommit mode: true
+2015-09-02 10:02:15,409 [AWT-EventQueue-0]  INFO org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl:151 - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/aejn]
+2015-09-02 10:02:15,409 [AWT-EventQueue-0]  INFO org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl:156 - HHH000046: Connection properties: {user=AejnSistem, password=****, autocommit=true, release_mode=auto}
+2015-09-02 10:02:15,675 [AWT-EventQueue-0]  INFO org.hibernate.dialect.Dialect:130 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2015-09-02 10:02:16,628 [AWT-EventQueue-0]  INFO org.hibernate.engine.transaction.internal.TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2015-09-02 10:02:16,690 [AWT-EventQueue-0]  INFO org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2015-09-02 10:02:17,847 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2015-09-02 10:02:17,847 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.SchemaUpdate:193 - HHH000102: Fetching database metadata
+2015-09-02 10:02:17,847 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.SchemaUpdate:205 - HHH000396: Updating schema
+2015-09-02 10:02:17,940 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.colaborador
+2015-09-02 10:02:17,956 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [id, status, registro, data_nasc, funcao_id, nome, data_adm]
+2015-09-02 10:02:17,956 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_47rvlfsr61prbe8v1thy0anox]
+2015-09-02 10:02:17,956 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [primary, fk_47rvlfsr61prbe8v1thy0anox]
+2015-09-02 10:02:17,987 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.curso
+2015-09-02 10:02:17,987 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [id, grau_instrucao, data_termino, data_inicio, nome, escola, colaborador_id]
+2015-09-02 10:02:17,987 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_fk87pi7bx8k611ul9bdjkt5qa]
+2015-09-02 10:02:17,987 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [primary, fk_fk87pi7bx8k611ul9bdjkt5qa]
+2015-09-02 10:02:18,019 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.documento
+2015-09-02 10:02:18,019 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [id, setor_id, titulo, modificacao, tipo]
+2015-09-02 10:02:18,019 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_dhn9c70u5c82w0c1cs79l45qk]
+2015-09-02 10:02:18,019 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [primary, fk_dhn9c70u5c82w0c1cs79l45qk]
+2015-09-02 10:02:18,050 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.empresa
+2015-09-02 10:02:18,050 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [id, nome, cnpj]
+2015-09-02 10:02:18,050 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: []
+2015-09-02 10:02:18,050 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-09-02 10:02:18,065 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.funcao
+2015-09-02 10:02:18,065 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [id, setor_id, funcao]
+2015-09-02 10:02:18,065 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_3syeywux4ca1fqvce6j6smbbf]
+2015-09-02 10:02:18,065 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [primary, fk_3syeywux4ca1fqvce6j6smbbf]
+2015-09-02 10:02:18,097 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.itens
+2015-09-02 10:02:18,097 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [pgr_id, id, mes_fim, mes_inicio, descricao]
+2015-09-02 10:02:18,097 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_ictk46yi5whynsgsvvd14a3s0]
+2015-09-02 10:02:18,097 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [fk_ictk46yi5whynsgsvvd14a3s0, primary]
+2015-09-02 10:02:18,144 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.itens_periodo
+2015-09-02 10:02:18,144 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [periodo_id, itens_id]
+2015-09-02 10:02:18,144 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_mgfjjg5ixynyokjgwnsdmheuq, fk_jhmlekph41st99rxv51uwwh4m]
+2015-09-02 10:02:18,144 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [fk_mgfjjg5ixynyokjgwnsdmheuq, fk_jhmlekph41st99rxv51uwwh4m]
+2015-09-02 10:02:18,175 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.pasta
+2015-09-02 10:02:18,175 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [id, descarte, armazenamento, data_descarte, numero]
+2015-09-02 10:02:18,175 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: []
+2015-09-02 10:02:18,175 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-09-02 10:02:18,190 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.pgr
+2015-09-02 10:02:18,190 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [id, ano]
+2015-09-02 10:02:18,190 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: []
+2015-09-02 10:02:18,190 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-09-02 10:02:18,206 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.setor
+2015-09-02 10:02:18,206 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [id, nome_setor, responsavel]
+2015-09-02 10:02:18,206 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: []
+2015-09-02 10:02:18,206 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-09-02 10:02:18,237 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.treinador
+2015-09-02 10:02:18,237 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [formacao, id, nome, empresa_id]
+2015-09-02 10:02:18,237 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_4ximvffwywesim8xybnbuor2r]
+2015-09-02 10:02:18,237 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [fk_4ximvffwywesim8xybnbuor2r, primary]
+2015-09-02 10:02:18,300 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.treinamento
+2015-09-02 10:02:18,300 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [id, pasta_id, prox_treinamento, status, horario_final, data_treinamento, tipo, localidade, treinador_id, itens_id, horario_inicio]
+2015-09-02 10:02:18,300 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_bbl4xie1k6sw9stc6gaf1mltt, fk_hwnlivir5ia3ejhk4d4eb5xxj, fk_i6ahbj5p9m18ev34r4hhr3ej7]
+2015-09-02 10:02:18,300 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [fk_bbl4xie1k6sw9stc6gaf1mltt, fk_hwnlivir5ia3ejhk4d4eb5xxj, primary, fk_i6ahbj5p9m18ev34r4hhr3ej7]
+2015-09-02 10:02:18,331 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.treinamento_colaborador
+2015-09-02 10:02:18,331 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [treinamento_id, colaborador_id]
+2015-09-02 10:02:18,331 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_5h3l3ifkiuwf6r2f00jcx9607, fk_47f0bvm6ogr6eowwrf3gemk8u]
+2015-09-02 10:02:18,331 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [fk_47f0bvm6ogr6eowwrf3gemk8u, fk_5h3l3ifkiuwf6r2f00jcx9607]
+2015-09-02 10:02:18,362 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.treinamento_documento
+2015-09-02 10:02:18,362 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [documento_id, treinamento_id]
+2015-09-02 10:02:18,362 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_6tf400r2r91p7x7am9uhohxrx, fk_ocbqnmnywbembs7vj58mvrkjq]
+2015-09-02 10:02:18,362 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [fk_6tf400r2r91p7x7am9uhohxrx, fk_ocbqnmnywbembs7vj58mvrkjq]
+2015-09-02 10:02:18,394 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.usuario
+2015-09-02 10:02:18,394 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [codigo, id, tipo, senha]
+2015-09-02 10:02:18,394 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: []
+2015-09-02 10:02:18,394 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-09-02 10:02:18,425 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.backup
+2015-09-02 10:02:18,425 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [data_backup, id, usuario_id, caminho]
+2015-09-02 10:02:18,425 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_i2hd58mw5yxorp19rstmyvl6l]
+2015-09-02 10:02:18,425 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [primary, fk_i2hd58mw5yxorp19rstmyvl6l]
+2015-09-02 10:02:18,456 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.periodo
+2015-09-02 10:02:18,456 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [id, periodo, iten_id]
+2015-09-02 10:02:18,456 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_4juaj3ep3qrxvv000c4xv0j4l]
+2015-09-02 10:02:18,456 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [fk_4juaj3ep3qrxvv000c4xv0j4l, primary]
+2015-09-02 10:02:18,487 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.SchemaUpdate:242 - HHH000232: Schema update complete
+2015-09-02 10:02:26,847 [AWT-EventQueue-0]  INFO bac.com.br.hibernate.utils.Loggin:24 - inicializando
+2015-09-02 10:03:25,686 [AWT-EventQueue-0]  INFO org.hibernate.annotations.common.Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2015-09-02 10:03:25,733 [AWT-EventQueue-0]  INFO org.hibernate.Version:41 - HHH000412: Hibernate Core {4.2.6.Final}
+2015-09-02 10:03:25,749 [AWT-EventQueue-0]  INFO org.hibernate.cfg.Environment:238 - HHH000206: hibernate.properties not found
+2015-09-02 10:03:25,749 [AWT-EventQueue-0]  INFO org.hibernate.cfg.Environment:345 - HHH000021: Bytecode provider name : javassist
+2015-09-02 10:03:26,718 [AWT-EventQueue-0]  INFO org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl:98 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-09-02 10:03:26,718 [AWT-EventQueue-0]  INFO org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl:134 - HHH000115: Hibernate connection pool size: 20
+2015-09-02 10:03:26,718 [AWT-EventQueue-0]  INFO org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl:137 - HHH000006: Autocommit mode: true
+2015-09-02 10:03:26,718 [AWT-EventQueue-0]  INFO org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl:151 - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/aejn]
+2015-09-02 10:03:26,718 [AWT-EventQueue-0]  INFO org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl:156 - HHH000046: Connection properties: {user=AejnSistem, password=****, autocommit=true, release_mode=auto}
+2015-09-02 10:03:26,874 [AWT-EventQueue-0]  INFO org.hibernate.dialect.Dialect:130 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2015-09-02 10:03:27,327 [AWT-EventQueue-0]  INFO org.hibernate.engine.transaction.internal.TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2015-09-02 10:03:27,327 [AWT-EventQueue-0]  INFO org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2015-09-02 10:03:28,030 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2015-09-02 10:03:28,030 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.SchemaUpdate:193 - HHH000102: Fetching database metadata
+2015-09-02 10:03:28,030 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.SchemaUpdate:205 - HHH000396: Updating schema
+2015-09-02 10:03:28,077 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.colaborador
+2015-09-02 10:03:28,077 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [id, status, registro, data_nasc, funcao_id, nome, data_adm]
+2015-09-02 10:03:28,077 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_47rvlfsr61prbe8v1thy0anox]
+2015-09-02 10:03:28,077 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [primary, fk_47rvlfsr61prbe8v1thy0anox]
+2015-09-02 10:03:28,093 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.curso
+2015-09-02 10:03:28,093 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [id, grau_instrucao, data_termino, data_inicio, nome, escola, colaborador_id]
+2015-09-02 10:03:28,093 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_fk87pi7bx8k611ul9bdjkt5qa]
+2015-09-02 10:03:28,093 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [primary, fk_fk87pi7bx8k611ul9bdjkt5qa]
+2015-09-02 10:03:28,124 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.documento
+2015-09-02 10:03:28,124 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [id, setor_id, titulo, modificacao, tipo]
+2015-09-02 10:03:28,124 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_dhn9c70u5c82w0c1cs79l45qk]
+2015-09-02 10:03:28,124 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [primary, fk_dhn9c70u5c82w0c1cs79l45qk]
+2015-09-02 10:03:28,155 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.empresa
+2015-09-02 10:03:28,155 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [id, nome, cnpj]
+2015-09-02 10:03:28,155 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: []
+2015-09-02 10:03:28,155 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-09-02 10:03:28,171 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.funcao
+2015-09-02 10:03:28,171 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [id, setor_id, funcao]
+2015-09-02 10:03:28,171 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_3syeywux4ca1fqvce6j6smbbf]
+2015-09-02 10:03:28,171 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [primary, fk_3syeywux4ca1fqvce6j6smbbf]
+2015-09-02 10:03:28,186 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.itens
+2015-09-02 10:03:28,186 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [pgr_id, id, mes_fim, mes_inicio, descricao]
+2015-09-02 10:03:28,186 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_ictk46yi5whynsgsvvd14a3s0]
+2015-09-02 10:03:28,186 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [fk_ictk46yi5whynsgsvvd14a3s0, primary]
+2015-09-02 10:03:28,202 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.itens_periodo
+2015-09-02 10:03:28,202 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [periodo_id, itens_id]
+2015-09-02 10:03:28,202 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_mgfjjg5ixynyokjgwnsdmheuq, fk_jhmlekph41st99rxv51uwwh4m]
+2015-09-02 10:03:28,202 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [fk_mgfjjg5ixynyokjgwnsdmheuq, fk_jhmlekph41st99rxv51uwwh4m]
+2015-09-02 10:03:28,218 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.pasta
+2015-09-02 10:03:28,218 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [id, descarte, armazenamento, data_descarte, numero]
+2015-09-02 10:03:28,218 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: []
+2015-09-02 10:03:28,233 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-09-02 10:03:28,233 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.pgr
+2015-09-02 10:03:28,233 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [id, ano]
+2015-09-02 10:03:28,233 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: []
+2015-09-02 10:03:28,233 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-09-02 10:03:28,265 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.setor
+2015-09-02 10:03:28,265 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [id, nome_setor, responsavel]
+2015-09-02 10:03:28,265 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: []
+2015-09-02 10:03:28,265 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-09-02 10:03:28,280 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.treinador
+2015-09-02 10:03:28,280 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [formacao, id, nome, empresa_id]
+2015-09-02 10:03:28,280 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_4ximvffwywesim8xybnbuor2r]
+2015-09-02 10:03:28,280 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [fk_4ximvffwywesim8xybnbuor2r, primary]
+2015-09-02 10:03:28,296 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.treinamento
+2015-09-02 10:03:28,296 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [id, pasta_id, prox_treinamento, status, horario_final, data_treinamento, tipo, localidade, treinador_id, itens_id, horario_inicio]
+2015-09-02 10:03:28,296 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_bbl4xie1k6sw9stc6gaf1mltt, fk_hwnlivir5ia3ejhk4d4eb5xxj, fk_i6ahbj5p9m18ev34r4hhr3ej7]
+2015-09-02 10:03:28,296 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [fk_bbl4xie1k6sw9stc6gaf1mltt, fk_hwnlivir5ia3ejhk4d4eb5xxj, primary, fk_i6ahbj5p9m18ev34r4hhr3ej7]
+2015-09-02 10:03:28,311 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.treinamento_colaborador
+2015-09-02 10:03:28,311 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [treinamento_id, colaborador_id]
+2015-09-02 10:03:28,311 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_5h3l3ifkiuwf6r2f00jcx9607, fk_47f0bvm6ogr6eowwrf3gemk8u]
+2015-09-02 10:03:28,311 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [fk_47f0bvm6ogr6eowwrf3gemk8u, fk_5h3l3ifkiuwf6r2f00jcx9607]
+2015-09-02 10:03:28,327 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.treinamento_documento
+2015-09-02 10:03:28,327 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [documento_id, treinamento_id]
+2015-09-02 10:03:28,327 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_6tf400r2r91p7x7am9uhohxrx, fk_ocbqnmnywbembs7vj58mvrkjq]
+2015-09-02 10:03:28,343 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [fk_6tf400r2r91p7x7am9uhohxrx, fk_ocbqnmnywbembs7vj58mvrkjq]
+2015-09-02 10:03:28,358 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.usuario
+2015-09-02 10:03:28,358 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [codigo, id, tipo, senha]
+2015-09-02 10:03:28,358 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: []
+2015-09-02 10:03:28,358 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-09-02 10:03:28,374 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.backup
+2015-09-02 10:03:28,374 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [data_backup, id, usuario_id, caminho]
+2015-09-02 10:03:28,374 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_i2hd58mw5yxorp19rstmyvl6l]
+2015-09-02 10:03:28,374 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [primary, fk_i2hd58mw5yxorp19rstmyvl6l]
+2015-09-02 10:03:28,390 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:65 - HHH000261: Table found: aejn.periodo
+2015-09-02 10:03:28,390 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:66 - HHH000037: Columns: [id, periodo, iten_id]
+2015-09-02 10:03:28,390 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:68 - HHH000108: Foreign keys: [fk_4juaj3ep3qrxvv000c4xv0j4l]
+2015-09-02 10:03:28,390 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.TableMetadata:69 - HHH000126: Indexes: [fk_4juaj3ep3qrxvv000c4xv0j4l, primary]
+2015-09-02 10:03:28,390 [AWT-EventQueue-0]  INFO org.hibernate.tool.hbm2ddl.SchemaUpdate:242 - HHH000232: Schema update complete
+2015-09-02 10:03:35,671 [AWT-EventQueue-0]  INFO bac.com.br.hibernate.utils.Loggin:24 - inicializando

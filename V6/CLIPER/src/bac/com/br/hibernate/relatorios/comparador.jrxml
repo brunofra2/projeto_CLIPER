@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="comparador" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="730" leftMargin="56" rightMargin="56" topMargin="56" bottomMargin="56" uuid="7473fe5a-35d7-41b7-8803-b866cda66f66">
+	<property name="ireport.zoom" value="1.1"/>
+	<property name="ireport.x" value="44"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="treinamentos obrigatorios" uuid="ddb289ce-e228-42a0-9448-5f43a68991e5">
+		<parameter name="id" class="java.lang.Long">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="pendencias" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[select DISTINCT documento.titulo from documento,descricao_documento,descricao,funcao,colaborador where documento.id = descricao_documento.id_documento_id and descricao_documento.descricao_id = descricao.id and descricao.id_funcao_id = funcao.id and funcao.id =colaborador.funcao_id and colaborador.id =$P{id}]]>
+		</queryString>
+		<field name="titulo" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="treinamentos realizados" uuid="c056ee23-b368-4cfb-a278-9bd8e89e1687">
+		<parameter name="id" class="java.lang.Long">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[select DISTINCT d.titulo from treinamento as t, treinamento_documento as td, documento as d, treinamento_colaborador as tc, colaborador as c where t.`status` = 'ATUALIZADO' and t.id = td.Treinamento_id and td.documento_id = d.id and t.id = tc.Treinamento_id and tc.colaborador_id = c.id and c.id = $P{id} order by d.titulo;]]>
+		</queryString>
+		<field name="titulo" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="id" class="java.lang.Long">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="pendencias" class="java.lang.String"/>
+	<parameter name="imagem" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select colaborador.nome,colaborador.registro from colaborador where colaborador.id = $P{id}]]>
+	</queryString>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="registro" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="colaborador">
+		<groupExpression><![CDATA[$F{nome}]]></groupExpression>
+		<groupHeader>
+			<band height="22">
+				<textField>
+					<reportElement x="0" y="0" width="416" height="22" uuid="545d4543-7bc0-43b4-9237-33f72d481ab7"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Colaborador: "+$F{nome}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="387" y="0" width="343" height="22" uuid="9174bafc-f11c-4a88-becb-7a57de406c0a"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA["RE: "+$F{registro}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="2">
+				<line>
+					<reportElement x="0" y="0" width="730" height="1" uuid="94188223-b012-4796-831f-4cf91b6f5e7d"/>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<title>
+		<band height="73" splitType="Stretch">
+			<staticText>
+				<reportElement x="79" y="0" width="651" height="57" uuid="3e0e0652-5087-4a4f-a250-9a401ec62896"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Treinamentos realizados e Pendentes]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="79" height="57" uuid="857d230d-3503-4ba4-8435-ce7cb517bbf7"/>
+				<imageExpression><![CDATA[$P{imagem}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<componentElement>
+				<reportElement x="0" y="16" width="365" height="14" uuid="8264cb89-5525-4937-9506-f09c8a08c983"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="treinamentos obrigatorios" uuid="3ef35b7e-33a3-4a67-89cc-83411ed8ad16">
+						<datasetParameter name="id">
+							<datasetParameterExpression><![CDATA[$P{id}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="pendencias">
+							<datasetParameterExpression><![CDATA[$P{pendencias}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="14" width="365">
+						<rectangle>
+							<reportElement x="0" y="0" width="365" height="14" backcolor="#66FFFF" uuid="e3a8d6f3-3a26-4a47-800b-d373a11964af">
+								<printWhenExpression><![CDATA[new Boolean($P{pendencias}.contains($F{titulo}))]]></printWhenExpression>
+							</reportElement>
+							<graphicElement>
+								<pen lineWidth="0.0"/>
+							</graphicElement>
+						</rectangle>
+						<rectangle>
+							<reportElement x="0" y="0" width="365" height="14" uuid="e4cbf397-194a-4c29-b14a-57e2de757b3a">
+								<printWhenExpression><![CDATA[new Boolean(!$P{pendencias}.contains($F{titulo}))]]></printWhenExpression>
+							</reportElement>
+							<graphicElement>
+								<pen lineWidth="0.0"/>
+							</graphicElement>
+						</rectangle>
+						<textField>
+							<reportElement x="0" y="0" width="365" height="14" uuid="32567697-21a7-406c-8234-df1c54ef3d8c"/>
+							<textFieldExpression><![CDATA[$F{titulo}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement x="365" y="16" width="365" height="14" uuid="14d86144-13ca-42f9-81fb-fbf6f1d41ad1"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="treinamentos realizados" uuid="2031e2ee-6f91-4e71-af0c-ae64c61eb38d">
+						<datasetParameter name="id">
+							<datasetParameterExpression><![CDATA[$P{id}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="14" width="365">
+						<textField isStretchWithOverflow="true">
+							<reportElement x="0" y="0" width="365" height="14" uuid="20064d68-619e-4d44-8b14-4abde7172683"/>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{titulo}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<staticText>
+				<reportElement x="365" y="0" width="365" height="16" uuid="538959e1-bb54-4ed9-a0b1-9513255132a7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[TREINAMENTOS REALIZADOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="365" height="16" uuid="8a01b65b-743f-46bf-9dc8-977ae6fdac90"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[DOCUMENTOS OBRIGATÓRIOS]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="730" height="1" uuid="05ad72d6-2d72-405f-ba84-f66da36a6c12"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Documentos_treinados" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d9aff9b3-e974-4d17-a574-38ef0e962590">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id" class="java.lang.Long"/>
+	<parameter name="ano" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select documento.titulo,colaborador.nome ,GROUP_CONCAT(DATE_FORMAT(treinamento.data_treinamento,'%d/%m/%Y')) as trein from colaborador,treinamento_colaborador,treinamento,treinamento_documento, documento where colaborador.id = treinamento_colaborador.colaborador_id and treinamento_colaborador.Treinamento_id = treinamento.id and treinamento.id = treinamento_documento.Treinamento_id and documento.id = treinamento_documento.documento_id and documento.id = $P{id} and EXTRACT(YEAR FROM treinamento.data_treinamento) = $P{ano} group by colaborador.nome order by trein]]>
+	</queryString>
+	<field name="titulo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="trein" class="java.lang.String"/>
+	<group name="documento">
+		<groupExpression><![CDATA[$F{titulo}]]></groupExpression>
+		<groupHeader>
+			<band height="21">
+				<rectangle>
+					<reportElement x="0" y="0" width="555" height="21" uuid="75f0fa39-8155-4803-9813-8d2a99f4de74"/>
+				</rectangle>
+				<textField>
+					<reportElement x="0" y="0" width="555" height="20" uuid="0d0594a6-c732-44e2-b981-490700e253b4"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{titulo}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="22" splitType="Stretch"/>
+	</pageHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="240" y="0" width="315" height="20" uuid="c1fc9507-5d48-4793-aa24-1973beef2c14"/>
+			</rectangle>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="240" y="0" width="315" height="20" uuid="ebe72ff1-b3d0-403a-a34b-5de81c740638"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{trein}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="0" width="240" height="20" uuid="6f9c4f27-ac39-4c36-a40c-20e66896fd69"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="240" height="20" uuid="763f36b8-4c44-4159-972b-acefac928051"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

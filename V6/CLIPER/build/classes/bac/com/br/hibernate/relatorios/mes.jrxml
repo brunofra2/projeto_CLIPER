@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="mes" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="730" leftMargin="56" rightMargin="56" topMargin="56" bottomMargin="56" uuid="fa4c60e6-4f21-43e2-a18e-b12acc23e801">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="20"/>
+	<subDataset name="dataset1" uuid="ef0644db-2776-48a9-80d1-2ec4c3831265">
+		<parameter name="data1" class="java.util.Date"/>
+		<parameter name="data2" class="java.util.Date"/>
+		<parameter name="id" class="java.lang.Long">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[select treinamento.id, colaborador.registro, colaborador.nome from treinamento,colaborador,treinamento_colaborador where colaborador.id = treinamento_colaborador.colaborador_id and treinamento.id = treinamento_colaborador.Treinamento_id and treinamento.prox_treinamento BETWEEN $P{data1} and $P{data2} order BY treinamento.id;]]>
+		</queryString>
+		<field name="id" class="java.lang.Long">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="registro" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="nome" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="dataset2" uuid="d4d816b1-89f5-4642-bc58-ddc9730bc705">
+		<parameter name="data1" class="java.util.Date">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="data2" class="java.util.Date">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[select treinamento.id, documento.titulo, documento.tipo from treinamento,documento,treinamento_documento where documento.id = treinamento_documento.documento_id and treinamento.id = treinamento_documento.Treinamento_id and treinamento.prox_treinamento BETWEEN $P{data1} and $P{data2} order BY treinamento.id;]]>
+		</queryString>
+		<field name="id" class="java.lang.Long">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="titulo" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="tipo" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="data1" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="data2" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\cambui com ftp\\AEJN2.0\\src\\bac\\com\\br\\hibernate\\relatorios\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagem" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select treinamento.id, treinamento.prox_treinamento from treinamento where treinamento.prox_treinamento BETWEEN $P{data1} and $P{data2} order by treinamento.prox_treinamento]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="prox_treinamento" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="105">
+			<staticText>
+				<reportElement x="94" y="0" width="636" height="84" uuid="d9911c35-25d3-4ddf-9a7b-e212dda54f35"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<text><![CDATA[TREINAMENTOS DESATUALIZADOS]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="94" height="84" uuid="d406dc55-c7bd-4062-943f-2bc4a658c372"/>
+				<imageExpression><![CDATA[$P{imagem}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<detail>
+		<band height="108">
+			<textField>
+				<reportElement x="157" y="0" width="100" height="20" uuid="200daf64-b7b9-4ec4-b07e-6ad4f46bac4c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="157" height="20" uuid="33ca2e0a-ad3d-49d7-ad5e-c206d28abe55"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[NUMERO TREINAMENTO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="157" height="20" uuid="f74ebc1c-1171-4d7f-9823-7cddfe5ef7fb"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[DATA DO TREINAMENTO:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="157" y="20" width="120" height="20" uuid="f99d799d-2ce4-4bc3-b948-ed198f5a98d0"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prox_treinamento}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="324" y="40" width="200" height="68" uuid="8fbcb85c-91e8-411f-ab06-877b534c9548"/>
+				<subreportParameter name="data1">
+					<subreportParameterExpression><![CDATA[$P{data1}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="data2">
+					<subreportParameterExpression><![CDATA[$P{data2}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="id">
+					<subreportParameterExpression><![CDATA[$F{id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "subdocumento.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="0" y="40" width="200" height="68" uuid="79251265-276c-4340-b882-79d025334293"/>
+				<subreportParameter name="data1">
+					<subreportParameterExpression><![CDATA[$P{data1}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="data2">
+					<subreportParameterExpression><![CDATA[$P{data2}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="id">
+					<subreportParameterExpression><![CDATA[$F{id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "subcolaboradores.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="23">
+			<textField>
+				<reportElement x="324" y="3" width="80" height="20" uuid="676f5332-ba36-4424-9397-10bd5e15b162"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="404" y="3" width="40" height="20" uuid="3cacb61c-70a9-4098-a305-65d44ba6e691"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="3" width="100" height="20" uuid="89e5742e-e2ab-4538-a46c-795a58335670"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Setembro\14]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

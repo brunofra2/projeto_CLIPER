@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cronograma_pgr" language="groovy" printOrder="Horizontal" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="730" leftMargin="56" rightMargin="56" topMargin="56" bottomMargin="56" uuid="d15d9ac4-0658-4784-9a5a-643a965c9cae">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="server"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab Data Text" hTextAlign="Center" hImageAlign="Center"/>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<parameter name="id" class="java.lang.Long">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagem" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select itens.descricao,GROUP_CONCAT(treinamento.data_treinamento) as meses,pgr.ano from itens,treinamento,pgr where itens.id = treinamento.itens_id and pgr.id = itens.pgr_id and pgr.id = $P{id} GROUP BY itens.descricao]]>
+	</queryString>
+	<field name="descricao" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="meses" class="java.lang.String"/>
+	<field name="ano" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="contador" class="java.util.List" incrementType="Report" calculation="Sum">
+		<variableExpression><![CDATA[]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<title>
+		<band height="67" splitType="Stretch">
+			<staticText>
+				<reportElement x="91" y="0" width="393" height="67" uuid="3f3a3a4b-64b2-4113-915e-0cdcbdc5141c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ADM-DRH - Programação de Treinamentos]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="484" y="0" width="158" height="67" uuid="3015547b-561b-4057-9a9e-7bbfd0540535"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" - "+$F{ano}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="15" y="8" width="70" height="50" uuid="807275be-8df6-4435-ba85-4e544cc4a8f7"/>
+				<imageExpression><![CDATA[$P{imagem}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="48"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="48" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="322" height="48" uuid="d095f867-d085-4883-a6d1-63e6ca5e254f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="410" y="0" width="96" height="28" uuid="93a32dbb-a11f-4c31-86e9-742ecdf585b0"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="410" y="28" width="36" height="20" uuid="ccc958f2-42d0-4483-9934-4d9b7500de25"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="446" y="28" width="30" height="20" uuid="ba3bae10-8577-4046-a68d-a1fb9fd9f3e3"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="476" y="28" width="30" height="20" uuid="5afe4488-5da6-42ba-b731-31c22381281d"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="506" y="0" width="84" height="28" uuid="fc33903a-b7ab-441d-8bc5-fdf4e8ccae16"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="506" y="28" width="24" height="20" uuid="96d1e95c-2f29-4b6b-af91-c10fbabf2385"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="530" y="28" width="30" height="20" uuid="48b52e1a-f15a-4438-ab5d-ba67a50cf11e"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="560" y="28" width="30" height="20" uuid="dd066ef5-8432-4716-8d04-fc1effc01f9f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="590" y="0" width="88" height="28" uuid="a338c1b2-5bc9-44aa-bd8b-2cc60ae8e81e"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="590" y="28" width="28" height="20" uuid="c856d022-96bc-4c82-86fc-b3bd298f8793"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="618" y="28" width="30" height="20" uuid="a63b6569-7912-49de-b1bc-ab00dc72a7c7"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="648" y="28" width="30" height="20" uuid="31edda17-4081-4898-8d12-bfc28cabfb69"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="322" y="0" width="88" height="28" uuid="51442365-7677-4372-878f-1e55a29e6490"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="322" y="28" width="28" height="20" uuid="af88e750-312d-4a21-b727-736762d8fd18"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="350" y="28" width="30" height="20" uuid="da59d4c6-fe74-449a-a207-d52500d12d92"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="380" y="28" width="30" height="20" uuid="cfad6754-d195-44ee-aee3-e23f1f3775e7"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="322" y="0" width="88" height="28" uuid="ddeceac0-1522-43b6-9531-cdc87d05f47a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1º trimestre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="0" width="96" height="28" uuid="9b77c5c6-69d8-48d6-acb0-42014d38d27a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[2º trimestre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="506" y="0" width="84" height="28" uuid="42bfc3f7-5540-40c5-9578-0f26ab91a789"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[3º trimestre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="590" y="0" width="88" height="28" uuid="b21d03ee-3ddd-4a9d-88d9-468e7cf7ad8b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[4º trimestre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="322" y="28" width="28" height="20" uuid="cf56f6da-c86e-4a2a-ab68-0f49e909880b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[JAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="28" width="30" height="20" uuid="87ef2e5d-54c4-484e-9d63-78a781b2f824"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[FEV]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="28" width="30" height="20" uuid="df225230-5710-4bc9-8dbe-25ff2395f22e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[MAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="28" width="36" height="20" uuid="85492e4c-1691-49b8-8fad-1ceaa8c065bc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[ABR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="446" y="28" width="30" height="20" uuid="7b4544cc-4684-4815-bd8d-0345ca25fbc8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[MAI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="476" y="28" width="30" height="20" uuid="903a6cb0-bf5f-448f-91f8-70b71f9d3e15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[JUN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="506" y="28" width="24" height="20" uuid="cb0b0d02-ad95-4f0b-8233-06472bec974d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[JUL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="530" y="28" width="30" height="20" uuid="3f28e6ca-f536-436d-b01c-f444f73ad3bd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[AGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="560" y="28" width="30" height="20" uuid="e592c71d-2510-4a2c-851d-0a32c383493f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[SET]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="590" y="28" width="28" height="20" uuid="efe2deeb-7beb-4528-850e-5c8ff0809a92"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[OUT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="618" y="28" width="30" height="20" uuid="28134842-83be-4bdb-b4df-e922e42532b8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[NOV]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="648" y="28" width="30" height="20" uuid="35cee0da-53e9-41bf-ae03-745bbb67b0c4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[DEZ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="2" width="322" height="46" uuid="4fd229f0-6453-4cf0-9be7-fb49e0761e18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[TREINAMENTO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="322" y="0" width="28" height="20" uuid="51393d51-5ac8-4d5b-afed-bcb64d48529e">
+					<printWhenExpression><![CDATA[new Boolean(!$F{meses}.contains("-01-"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="350" y="0" width="30" height="20" uuid="5fd70dfa-55cd-4264-b213-63464cee0ffd">
+					<printWhenExpression><![CDATA[new Boolean(!$F{meses}.contains("-02-"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="380" y="0" width="30" height="20" uuid="3d080e10-84f0-4bc6-bb57-faa1570c9a92">
+					<printWhenExpression><![CDATA[new Boolean(!$F{meses}.contains("-03-"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="410" y="0" width="36" height="20" uuid="c2a29681-d16a-4c90-bd99-91ca3222c37f">
+					<printWhenExpression><![CDATA[new Boolean(!$F{meses}.contains("-04-"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="446" y="0" width="30" height="20" uuid="03cdf6a1-0acf-4f4c-ba36-7146792b290d">
+					<printWhenExpression><![CDATA[new Boolean(!$F{meses}.contains("-06-"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="506" y="0" width="24" height="20" uuid="4820b10f-27fa-4ae4-b7e2-603559e2cc62">
+					<printWhenExpression><![CDATA[new Boolean(!$F{meses}.contains("-07-"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="530" y="0" width="30" height="20" uuid="e9072194-26a0-41d4-9b54-a151f6b53139">
+					<printWhenExpression><![CDATA[new Boolean(!$F{meses}.contains("-08-"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="560" y="0" width="30" height="20" uuid="bf3db284-b59b-431d-91e4-fad66006f70d">
+					<printWhenExpression><![CDATA[new Boolean(!$F{meses}.contains("-09-"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="590" y="0" width="28" height="20" uuid="2d134266-2e4f-40c2-9523-e00e8c1dc511">
+					<printWhenExpression><![CDATA[new Boolean(!$F{meses}.contains("-10-"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="618" y="0" width="34" height="20" uuid="ba8b0546-7f51-46dd-a821-5ed7ee227681">
+					<printWhenExpression><![CDATA[new Boolean(!$F{meses}.contains("-11-"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="648" y="0" width="30" height="20" uuid="d7621b10-30da-4abb-a458-1d12f935a6e0">
+					<printWhenExpression><![CDATA[new Boolean(!$F{meses}.contains("-12-"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="322" y="0" width="28" height="20" backcolor="#CCCCCC" uuid="05219ff0-e335-46d6-bb87-8262dc163a8b">
+					<printWhenExpression><![CDATA[new Boolean($F{meses}.contains("-01-"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="350" y="0" width="30" height="20" backcolor="#CCCCCC" uuid="03ceb5f5-e52b-46fa-acf9-447c26ef3edb">
+					<printWhenExpression><![CDATA[new Boolean($F{meses}.contains("-02-"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="380" y="0" width="30" height="20" backcolor="#CCCCCC" uuid="cbe17df1-9611-497b-b5c5-1bd9fde89746">
+					<printWhenExpression><![CDATA[new Boolean($F{meses}.contains("-03-"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="410" y="0" width="36" height="20" backcolor="#CCCCCC" uuid="3794f4c9-f6f9-478f-ae83-81bd7fd74db6">
+					<printWhenExpression><![CDATA[new Boolean($F{meses}.contains("-04-"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="446" y="0" width="30" height="20" backcolor="#CCCCCC" uuid="6017c165-1828-4b4b-b9f6-3543e162ce8a">
+					<printWhenExpression><![CDATA[new Boolean($F{meses}.contains("-05-"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="506" y="0" width="24" height="20" backcolor="#CCCCCC" uuid="2fce6e8b-0efe-4e64-8849-9e56a39c630e">
+					<printWhenExpression><![CDATA[new Boolean($F{meses}.contains("-07-"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="530" y="0" width="30" height="20" backcolor="#CCCCCC" uuid="a1df9e02-f2e5-4510-b7d0-b88a41c81df4">
+					<printWhenExpression><![CDATA[new Boolean($F{meses}.contains("-08-"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="560" y="0" width="30" height="20" backcolor="#CCCCCC" uuid="2b5b6846-e3da-4329-a238-6973380a6c81">
+					<printWhenExpression><![CDATA[new Boolean($F{meses}.contains("-09-"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="590" y="0" width="28" height="20" backcolor="#CCCCCC" uuid="20d5a872-7e9d-4bbb-a3ec-bf7d815a9f1e">
+					<printWhenExpression><![CDATA[new Boolean($F{meses}.contains("-10-"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="618" y="0" width="30" height="20" backcolor="#CCCCCC" uuid="cb2065d8-7a5a-4888-9739-95b0e21e21e6">
+					<printWhenExpression><![CDATA[new Boolean($F{meses}.contains("-11-"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="648" y="0" width="30" height="20" backcolor="#CCCCCC" uuid="8d03fc7e-d4eb-4118-9729-f1d7b3a99cd0">
+					<printWhenExpression><![CDATA[new Boolean($F{meses}.contains("-12-"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="0" width="322" height="20" uuid="8a5a0f69-541a-4e7d-b99e-d90a0ef7911d"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="322" height="20" uuid="9ee9620b-fd5e-4f2d-85c0-d61625e90420"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descricao}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="476" y="0" width="30" height="20" uuid="3fb6bc1c-c8ce-4dc2-b877-958842339997">
+					<printWhenExpression><![CDATA[new Boolean(!$F{meses}.contains("JUNHO"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="476" y="0" width="30" height="20" backcolor="#CCCCCC" uuid="6c14393a-5331-4367-9ea2-5df9cf2dac07">
+					<printWhenExpression><![CDATA[new Boolean($F{meses}.contains("-06-"))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="21">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="4190b037-0995-4d99-b63a-a82f6b225539"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Setembro/2014]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
