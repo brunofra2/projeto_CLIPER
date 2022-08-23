@@ -2,17 +2,18 @@ package bac.com.br.hibernate.utils;
 
 import bac.com.br.hibernate.Dao.DocumentoDao;
 import bac.com.br.hibernate.Dao.SetorDao;
-import bac.com.br.hibernate.entidade.Documento;
 import bac.com.br.hibernate.entidade.Setor;
 import bac.com.br.hibernate.relatorios.Analise_critica;
-import com.sun.awt.AWTUtilities;
-import java.awt.Cursor;
-import java.awt.Dimension;
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
-import java.awt.Toolkit;
+import org.apache.commons.net.ftp.FTPClient;
+import org.apache.commons.net.ftp.FTPFile;
+import org.apache.commons.net.ftp.FTPReply;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
+import java.awt.*;
 import java.io.*;
-import java.math.BigInteger;
 import java.nio.channels.FileChannel;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -22,19 +23,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Enumeration;
 import java.util.List;
-import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-import javax.swing.table.TableRowSorter;
-import org.apache.commons.net.ftp.FTPClient;
-import org.apache.commons.net.ftp.FTPFile;
-import org.apache.commons.net.ftp.FTPReply;
-import sun.applet.resources.MsgAppletViewer;
+//import sun.applet.resources.MsgAppletViewer;
 
 /**
  *
@@ -110,7 +100,7 @@ public class Utils {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             String url = "jdbc:mysql://localhost:3306/aejn";
-            conexao = DriverManager.getConnection(url, "adminaejn", "aejnconection");
+            conexao = DriverManager.getConnection(url, "root", "bruno");
             conexao.close();
             System.err.println("conectou direto");
         } catch (Exception e) {
@@ -158,12 +148,12 @@ public class Utils {
 
     public static void tanscomponente(JFrame frm) {
         frm.setUndecorated(true);
-        AWTUtilities.setWindowOpaque(frm, false);
+//        AWTUtilities.setWindowOpaque(frm, false);
     }
 
     public static void tanscomponenteDialog(JDialog frm) {
         frm.setUndecorated(true);
-        AWTUtilities.setWindowOpaque(frm, false);
+//        AWTUtilities.setWindowOpaque(frm, false);
     }
 
     public static void copyFile(File source, File destination) throws IOException {

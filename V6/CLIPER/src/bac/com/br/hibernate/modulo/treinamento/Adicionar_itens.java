@@ -7,7 +7,7 @@ package bac.com.br.hibernate.modulo.treinamento;
 
 import bac.com.br.hibernate.Dao.ItensDao;
 import bac.com.br.hibernate.Dao.PeriodoDao;
-import bac.com.br.hibernate.Dao.PgrDao;
+//import bac.com.br.hibernate.Dao.PgrDao;
 import bac.com.br.hibernate.entidade.Itens;
 import bac.com.br.hibernate.entidade.Pgr;
 import bac.com.br.hibernate.entidade.Periodo;

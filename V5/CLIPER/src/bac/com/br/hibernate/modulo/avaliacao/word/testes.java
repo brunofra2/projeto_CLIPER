@@ -18,7 +18,7 @@ public class testes {
     
     public static void main (String [] args)throws Exception{
         Avaliacao ava = new AvaliacaoDao().seleciona(Long.valueOf("10"));
-        new Impressao_word().executar_impressao(ava);
+//        new Impressao_word().executar_impressao(ava);
         File filce = new File("S:\\TI\\GESTÃO DE TI\\avaliacoes e termos\\teste.docx");
             Desktop.getDesktop().open(filce);
     }

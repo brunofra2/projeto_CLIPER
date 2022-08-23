@@ -9,7 +9,7 @@ import bac.com.br.hibernate.Dao.ColaboradorDao;
 import bac.com.br.hibernate.Dao.DocumentoDao;
 import bac.com.br.hibernate.Dao.ItensDao;
 import bac.com.br.hibernate.Dao.PastaDao;
-import bac.com.br.hibernate.Dao.PgrDao;
+//import bac.com.br.hibernate.Dao.PgrDao;
 import bac.com.br.hibernate.Dao.SetorDao;
 import bac.com.br.hibernate.Dao.Tipo_treinamentoDao;
 import bac.com.br.hibernate.Dao.TreinadorDao;
@@ -141,7 +141,7 @@ public class Cadastrar_treinamento extends javax.swing.JDialog {
     }
 
     private void atualizarcombo3() {
-        lista_pgr = new PgrDao().combo("");
+//        lista_pgr = new PgrDao().combo("");
         pgr.removeAllItems();
         pgr.addItem("<...>");
         for (Pgr t : lista_pgr) {

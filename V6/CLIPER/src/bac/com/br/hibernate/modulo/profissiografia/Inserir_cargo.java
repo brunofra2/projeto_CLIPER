@@ -106,7 +106,7 @@ public class Inserir_cargo extends javax.swing.JDialog {
     protected void preenchecampo(Funcao f){
         fun = f;
         funcao.setText(f.getFuncao());
-        setor.setSelectedItem(f.getSetorId().getNomeSetor());
+        setor.setSelectedItem(f.getIdSetor().getNomeSetor());
         situacao.setSelectedItem(f.getCondicao());
         local.setSelectedItem(f.getLotacaoId().getTitulo());
         domicilio.setSelectedItem(f.getDomicilioId().getNome());
@@ -114,7 +114,7 @@ public class Inserir_cargo extends javax.swing.JDialog {
     }
     private Funcao salvar(){
         fun.setFuncao(funcao.getText());
-        fun.setSetorId(lista_setor.get(setor.getSelectedIndex()-1));
+        fun.setIdSetor(lista_setor.get(setor.getSelectedIndex()-1));
         fun.setCondicao(situacao.getSelectedItem().toString());
         fun.setLotacaoId(lista_local.get(local.getSelectedIndex()-1));
         fun.setDomicilioId(lista_do.get(domicilio.getSelectedIndex()-1));
@@ -149,7 +149,7 @@ public class Inserir_cargo extends javax.swing.JDialog {
             try {
                 new FuncaoDao().alterar(salvar());
                 Loggin.arquivo_log("alterado cadastro de uma nova funçao com o id"+fun.getId()+
-                            " com os itens:"+fun.getFuncao()+";"+fun.getSetorId());
+                            " com os itens:"+fun.getFuncao()+";"+fun.getIdSetor());
                 pai.atualizar("");
                 Msg.informacao(this, "registro alterado com sucesso");
             } catch (Exception e) {
@@ -160,7 +160,7 @@ public class Inserir_cargo extends javax.swing.JDialog {
             try {
                 new FuncaoDao().inserir(salvar());
                 Loggin.arquivo_log("criado cadastro de um novo documento com o id"+fun.getId()+
-                            " com os itens:"+fun.getFuncao()+";"+fun.getSetorId());
+                            " com os itens:"+fun.getFuncao()+";"+fun.getIdSetor());
                
                 Msg.informacao(this, "salvo com sucesso");
             } catch (Exception e) {

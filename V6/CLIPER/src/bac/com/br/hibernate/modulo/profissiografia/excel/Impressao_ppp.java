@@ -397,17 +397,17 @@ public class Impressao_ppp {
                 sheet.addCell(datas);
 
                 sheet.mergeCells(2, ppp, 11, ppp);
-                for (Atividades ati : his.getIdCargo().getAtividadesList()) {
-                   
-                    Label atividade = new Label(2, ppp, his.getIdCargo().getFuncao() + ": " + ati.getDescricao(), normal);
-                    // atividade.setCellFormat(times);
-
-                    CellView cs = new CellView();
-                    cs.setSize(1000);
-                    sheet.addCell(atividade);
-                    sheet.setRowView(ppp, cs);
-
-                }
+//                for (Atividades ati : his.getIdCargo().getAtividadesList()) {
+//
+//                    Label atividade = new Label(2, ppp, his.getIdCargo().getFuncao() + ": " + ati.getDescricao(), normal);
+//                    // atividade.setCellFormat(times);
+//
+//                    CellView cs = new CellView();
+//                    cs.setSize(1000);
+//                    sheet.addCell(atividade);
+//                    sheet.setRowView(ppp, cs);
+//
+//                }
                 ppp++;
 
                 Label texto28 = new Label(11, ppp, "", borda(1));
@@ -538,53 +538,53 @@ public class Impressao_ppp {
             SimpleDateFormat form = new SimpleDateFormat("dd/MM/YYYY");
             risco = risco + 4;
             Integer teste = risco;
-            for (Historico his : c.getHistoricoList()) {
-                Label datas;
-                if (his.getPeriodoFim() == null) {
-                sheet.mergeCells(0, risco, 1, risco + his.getIdCargo().getRiscoList().size()-1);
-                    datas = new Label(0, risco, form.format(his.getPeriodoInicio()) + " até " + "Presente data", normal);
-                } else {
-                sheet.mergeCells(0, risco, 1, risco + his.getIdCargo().getRiscoList().size()-1);
-                    datas = new Label(0, risco, form.format(his.getPeriodoInicio()) + " até " + form.format(his.getPeriodoFim()), normal);
-                }
-                sheet.addCell(datas);
-                int histo = 1;
-                for (Risco ris : his.getIdCargo().getRiscoList()) {
-                    int iten = 1;
-                    System.out.println("*" + histo);
-                    sheet.mergeCells(2, risco, 2, risco);
-                    tipo = new Label(2, risco, ris.getCategoria(), normal);
-                    sheet.mergeCells(3, risco, 4, risco);
-                    fator = new Label(3, risco, ris.getFatorDeRisco(), normal);
-                    sheet.mergeCells(5, risco, 6, risco);
-                    inten = new Label(5, risco, ris.getIntencidade(), normal);
-                    sheet.mergeCells(7, risco, 8, risco);
-                    tecni = new Label(7, risco, ris.getClassificacao(), normal);
-                    sheet.addCell(tipo);
-                    sheet.addCell(fator);
-                    sheet.addCell(inten);
-                    sheet.addCell(tecni);
-                    for (ItemSeguranca seg : his.getIdCargo().getItemSegurancaList()) {
-
-                        System.out.println("&" + iten);
-                        if (histo == iten) {
-                            sheet.mergeCells(9, risco, 9, risco);
-                            epc = new Label(9, risco, seg.getEpc(), normal);
-                            sheet.mergeCells(10, risco, 10, risco);
-                            epi = new Label(10, risco, seg.getEpi(), normal);
-                            sheet.mergeCells(11, risco, 11, risco);
-                            ca = new Label(11, risco, seg.getCa(), normal);
-                            sheet.addCell(epc);
-                            sheet.addCell(epi);
-                            sheet.addCell(ca);
-                        }
-                        iten++;
-                    }
-                    risco++;
-                    histo++;
-                }
+//            for (Historico his : c.getHistoricoList()) {
+//                Label datas;
+//                if (his.getPeriodoFim() == null) {
+//                sheet.mergeCells(0, risco, 1, risco + his.getIdCargo().getRiscoList().size()-1);
+//                    datas = new Label(0, risco, form.format(his.getPeriodoInicio()) + " até " + "Presente data", normal);
+//                } else {
+//                sheet.mergeCells(0, risco, 1, risco + his.getIdCargo().getRiscoList().size()-1);
+//                    datas = new Label(0, risco, form.format(his.getPeriodoInicio()) + " até " + form.format(his.getPeriodoFim()), normal);
+//                }
+//                sheet.addCell(datas);
+//                int histo = 1;
+//                for (Risco ris : his.getIdCargo().getRiscoList()) {
+//                    int iten = 1;
+//                    System.out.println("*" + histo);
+//                    sheet.mergeCells(2, risco, 2, risco);
+//                    tipo = new Label(2, risco, ris.getCategoria(), normal);
+//                    sheet.mergeCells(3, risco, 4, risco);
+//                    fator = new Label(3, risco, ris.getFatorDeRisco(), normal);
+//                    sheet.mergeCells(5, risco, 6, risco);
+//                    inten = new Label(5, risco, ris.getIntencidade(), normal);
+//                    sheet.mergeCells(7, risco, 8, risco);
+//                    tecni = new Label(7, risco, ris.getClassificacao(), normal);
+//                    sheet.addCell(tipo);
+//                    sheet.addCell(fator);
+//                    sheet.addCell(inten);
+//                    sheet.addCell(tecni);
+//                    for (ItemSeguranca seg : his.getIdCargo().getItemSegurancaList()) {
+//
+//                        System.out.println("&" + iten);
+//                        if (histo == iten) {
+//                            sheet.mergeCells(9, risco, 9, risco);
+//                            epc = new Label(9, risco, seg.getEpc(), normal);
+//                            sheet.mergeCells(10, risco, 10, risco);
+//                            epi = new Label(10, risco, seg.getEpi(), normal);
+//                            sheet.mergeCells(11, risco, 11, risco);
+//                            ca = new Label(11, risco, seg.getCa(), normal);
+//                            sheet.addCell(epc);
+//                            sheet.addCell(epi);
+//                            sheet.addCell(ca);
+//                        }
+//                        iten++;
+//                    }
+//                    risco++;
+//                    histo++;
+//                }
                 
-            }
+//            }
         } catch (Exception e) {
             e.printStackTrace();
             Msg.erro(null, "erro");

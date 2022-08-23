@@ -7,7 +7,7 @@ package bac.com.br.hibernate.modulo.treinamento;
 
 import bac.com.br.hibernate.Dao.ItensDao;
 import bac.com.br.hibernate.Dao.PeriodoDao;
-import bac.com.br.hibernate.Dao.PgrDao;
+//import bac.com.br.hibernate.Dao.PgrDao;
 import bac.com.br.hibernate.entidade.Itens;
 import bac.com.br.hibernate.entidade.Pgr;
 import bac.com.br.hibernate.entidade.Periodo;
@@ -53,7 +53,7 @@ public class pesquisar_pgr extends javax.swing.JDialog {
 
     protected void atualizar(String s) {
         try {
-            lista_pgr = new PgrDao().getlista(s);
+//            lista_pgr = new PgrDao().getlista(s);
             DefaultTableModel model = (DefaultTableModel) tabela.getModel();
             model.setNumRows(0);
             for (Pgr p : lista_pgr) {
@@ -408,7 +408,7 @@ public class pesquisar_pgr extends javax.swing.JDialog {
             } else {
                 try {
 
-                    new PgrDao().excluir(lista_pgr.get(row));
+//                    new PgrDao().excluir(lista_pgr.get(row));
                     
                 Loggin.arquivo_log("excluido cadastro de um pgr com o id"+lista_pgr.get(row));
                     atualizar("");

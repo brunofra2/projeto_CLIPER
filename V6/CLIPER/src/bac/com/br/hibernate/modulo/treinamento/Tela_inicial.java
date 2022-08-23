@@ -54,7 +54,7 @@ public class Tela_inicial extends javax.swing.JFrame {
                             }
                             if(progresso.getValue() == 90){
                                 descrição.setText("atualizando...");
-				//Utils.getConexao();
+				                Utils.getConexao();
                                 //Verificar_vencimentos();
                             }
                             

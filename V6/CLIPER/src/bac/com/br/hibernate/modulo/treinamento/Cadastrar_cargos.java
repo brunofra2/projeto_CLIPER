@@ -88,13 +88,13 @@ public class Cadastrar_cargos extends javax.swing.JDialog {
     protected void preenchecampo(Funcao f){
         fun = f;
         funcao.setText(f.getFuncao());
-        setor.setSelectedItem(f.getSetorId().getNomeSetor());
+        setor.setSelectedItem(f.getIdSetor().getNomeSetor());
     }
     private Funcao salvar(){
         fun.setFuncao(funcao.getText());
         fun.setCondicao(situacao.getSelectedItem().toString());
         fun.setLotacaoId(lista_local.get(local.getSelectedIndex()-1));
-        fun.setSetorId(lista_setor.get(setor.getSelectedIndex()-1));
+        fun.setIdSetor(lista_setor.get(setor.getSelectedIndex()-1));
         return fun;
     }
 
@@ -126,7 +126,7 @@ public class Cadastrar_cargos extends javax.swing.JDialog {
             try {
                 new FuncaoDao().alterar(salvar());
                 Loggin.arquivo_log("alterado cadastro de uma nova funçao com o id"+fun.getId()+
-                            " com os itens:"+fun.getFuncao()+";"+fun.getSetorId());
+                            " com os itens:"+fun.getFuncao()+";"+fun.getIdSetor());
                 pai.atualizartabela("");
                 Msg.informacao(this, "registro alterado com sucesso");
             } catch (Exception e) {
@@ -137,7 +137,7 @@ public class Cadastrar_cargos extends javax.swing.JDialog {
             try {
                 new FuncaoDao().inserir(salvar());
                 Loggin.arquivo_log("criado cadastro de um novo documento com o id"+fun.getId()+
-                            " com os itens:"+fun.getFuncao()+";"+fun.getSetorId());
+                            " com os itens:"+fun.getFuncao()+";"+fun.getIdSetor());
                 pai.atualizartabela("");
                 Msg.informacao(this, "salvo com sucesso");
             } catch (Exception e) {

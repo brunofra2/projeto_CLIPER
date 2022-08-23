@@ -130,7 +130,7 @@ public class Inserir_atividades extends javax.swing.JDialog {
             try {
                 new AtividadeDao().alter(salvar());
                 Loggin.arquivo_log("alterado cadastro de uma nova funçao com o id"+fun.getId()+
-                            " com os itens:"+fun.getFuncao()+";"+fun.getSetorId());
+                            " com os itens:"+fun.getFuncao()+";"+fun.getIdSetor());
                 pai.atualizar("");
                 Msg.informacao(this, "registro alterado com sucesso");
             } catch (Exception e) {
@@ -141,7 +141,7 @@ public class Inserir_atividades extends javax.swing.JDialog {
             try {
                 new AtividadeDao().insert(salvar());
                 Loggin.arquivo_log("criado cadastro de um novo documento com o id"+fun.getId()+
-                            " com os itens:"+fun.getFuncao()+";"+fun.getSetorId());
+                            " com os itens:"+fun.getFuncao()+";"+fun.getIdSetor());
                 pai.atualizar("");
                 Msg.informacao(this, "salvo com sucesso");
             } catch (Exception e) {

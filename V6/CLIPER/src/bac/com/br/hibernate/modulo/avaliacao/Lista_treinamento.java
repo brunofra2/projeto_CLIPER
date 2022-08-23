@@ -7,7 +7,7 @@ package bac.com.br.hibernate.modulo.avaliacao;
 
 import bac.com.br.hibernate.Dao.AvaliacaoDao;
 import bac.com.br.hibernate.entidade.Avaliacao;
-import bac.com.br.hibernate.modulo.avaliacao.word.Impressao_word;
+//import bac.com.br.hibernate.modulo.avaliacao.word.Impressao_word;
 import bac.com.br.hibernate.utils.Msg;
 import bac.com.br.hibernate.utils.Utils;
 import java.awt.Desktop;
@@ -174,14 +174,14 @@ public class Lista_treinamento extends javax.swing.JDialog {
             Msg.alerta(this, "selecione o registro desejado");
         } else {
             try {
-                Impressao_word ip = new Impressao_word();
-                String filename = "teste";
-                ip.executar_impressao(listaAV.get(row));
-                /*        ip.createdoc(filename, "Declaro estar ciente de que, a contar da data __/__/___, encontro-me em periodo"
-                + "experimental, pelo prazo de três meses, conforme clausula xxx do acordo coletivo e que somente"
-                + "após esse periodo serei promovido a função de ______________, condicionado à aprovação.");*/
-                File filce = new File("S:\\TI\\GESTÃO DE TI\\avaliacoes e termos\\teste.docx");
-                Desktop.getDesktop().open(filce);
+//                Impressao_word ip = new Impressao_word();
+//                String filename = "teste";
+//                ip.executar_impressao(listaAV.get(row));
+//                /*        ip.createdoc(filename, "Declaro estar ciente de que, a contar da data __/__/___, encontro-me em periodo"
+//                + "experimental, pelo prazo de três meses, conforme clausula xxx do acordo coletivo e que somente"
+//                + "após esse periodo serei promovido a função de ______________, condicionado à aprovação.");*/
+//                File filce = new File("S:\\TI\\GESTÃO DE TI\\avaliacoes e termos\\teste.docx");
+//                Desktop.getDesktop().open(filce);
             } catch (Exception e) {
                 e.printStackTrace();
                 Msg.erro(this, "erro ao abrir arquivo gerado" + e.getMessage());

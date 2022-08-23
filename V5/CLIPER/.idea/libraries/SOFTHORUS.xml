@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SOFTHORUS">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/versao oficial/dist/SOFTHORUS.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

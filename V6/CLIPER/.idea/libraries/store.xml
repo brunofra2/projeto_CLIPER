@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="store">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/store/CLIPER(1).jar!/" />
+      <root url="jar://$PROJECT_DIR$/store/CLIPER.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

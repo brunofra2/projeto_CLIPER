@@ -16,7 +16,7 @@ import javax.persistence.Persistence;
  */
 public class Singleton {
     private static EntityManager conection;
-    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("AEJN");
+    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("aejn");
     
     //GETCONECTION
     public static EntityManager getconection(){

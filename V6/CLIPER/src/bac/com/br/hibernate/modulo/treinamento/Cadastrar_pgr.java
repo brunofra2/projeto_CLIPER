@@ -6,7 +6,7 @@
 
 package bac.com.br.hibernate.modulo.treinamento;
 
-import bac.com.br.hibernate.Dao.PgrDao;
+//import bac.com.br.hibernate.Dao.PgrDao;
 import bac.com.br.hibernate.entidade.Pgr;
 import bac.com.br.hibernate.utils.Loggin;
 import bac.com.br.hibernate.utils.Msg;
@@ -74,7 +74,7 @@ public class Cadastrar_pgr extends javax.swing.JDialog {
         if(isAlterar() == false){
             if(verifica() == false){
                 try {
-                    new PgrDao().inserir(salvar());
+//                    new PgrDao().inserir(salvar());
                     Loggin.arquivo_log("criado cadastro de um novo ano com o id"+p.getId()+
                             " com os itens:"+p.getAno());
                     Msg.informacao(this, "registro salvo com sucesso");
@@ -87,7 +87,7 @@ public class Cadastrar_pgr extends javax.swing.JDialog {
         }else{
             if(verifica() == false){
                 try {
-                    new PgrDao().alterar(salvar());
+//                    new PgrDao().alterar(salvar());
                     Loggin.arquivo_log("alterado cadastro de um novo ano com o id"+p.getId()+
                             " com os itens:"+p.getAno());
                     Msg.informacao(this, "registro alterado com sucesso");

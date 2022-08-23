@@ -15,7 +15,7 @@ import bac.com.br.hibernate.entidade.Documento;
 import bac.com.br.hibernate.entidade.Historico;
 import bac.com.br.hibernate.relatorios.Colaboradores_treinados;
 import bac.com.br.hibernate.relatorios.Relatorio_descricao;
-import bac.com.br.hibernate.relatorios.pendencias;
+//import bac.com.br.hibernate.relatorios.pendencias;
 import bac.com.br.hibernate.utils.Daos_Nativos;
 import bac.com.br.hibernate.utils.Loggin;
 import bac.com.br.hibernate.utils.Msg;
@@ -886,7 +886,7 @@ public class Carregar_colaboradores extends javax.swing.JDialog {
                     Msg.alerta(this, "selecione o periodo desejado");
                 }else{
                     falta.clear();
-                new pendencias(Long.valueOf(lista.get(row).getId()),comparacao(lista.get(row).getId(),cbano.getSelectedItem().toString()),Utils.Sistema_operacional());
+//                new pendencias(Long.valueOf(lista.get(row).getId()),comparacao(lista.get(row).getId(),cbano.getSelectedItem().toString()),Utils.Sistema_operacional());
                 System.err.println("\nlista"+falta.size());
                 }
             }
