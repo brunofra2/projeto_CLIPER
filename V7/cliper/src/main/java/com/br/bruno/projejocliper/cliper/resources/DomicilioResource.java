@@ -6,9 +6,7 @@ import com.br.bruno.projejocliper.cliper.entities.Usuario;
 import com.br.bruno.projejocliper.cliper.services.DomicilioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,23 +22,27 @@ public class DomicilioResource {
 
         return  ResponseEntity.ok().body(domicilioService.findAll());
     }
-
-    public ResponseEntity<DomicilioDto> findById(Integer id){
+    @GetMapping(value = "/id/{id}")
+    public ResponseEntity<DomicilioDto> findById(@PathVariable Integer id){
 
         return  ResponseEntity.ok().body(domicilioService.findById(id));
     }
 
-    public ResponseEntity<DomicilioDto> create(Domicilio domicilio){
+    @PostMapping(value = "/insert")
+    public ResponseEntity<DomicilioDto> create( @RequestBody Domicilio domicilio){
 
         return ResponseEntity.ok().body(domicilioService.create(domicilio));
     }
 
-    public ResponseEntity<DomicilioDto> update(Domicilio domicilio){
+    @PutMapping(value = "/update")
+    public ResponseEntity<DomicilioDto> update(@RequestBody Domicilio domicilio){
 
         return ResponseEntity.ok().body(domicilioService.update(domicilio));
 
     }
-    public ResponseEntity<?> delete(Integer id){
+
+    @DeleteMapping(value = "/delete/{id}")
+    public ResponseEntity<?> delete(@PathVariable Integer id){
         domicilioService.delete(id);
         return ResponseEntity.noContent().build();
     }
