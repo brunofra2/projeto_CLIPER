@@ -14,6 +14,7 @@ public class UsuarioDto implements Serializable {
     private final List<BackupDto> backupList;
     private final List<TreinadorDto> treinadorList;
 
+
     public UsuarioDto(Long id, String codigo, String senha, String tipo, List<BackupDto> backupList, List<TreinadorDto> treinadorList) {
         this.id = id;
         this.codigo = codigo;

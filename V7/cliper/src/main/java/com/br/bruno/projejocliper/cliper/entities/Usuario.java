@@ -9,7 +9,9 @@ import java.util.List;
  */
 @Entity
 @Table(name = "usuario")
-public class Usuario {
+public class Usuario implements  Serializable{
+
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
@@ -32,8 +34,13 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(Long id) {
+    public Usuario(Long id, String codigo, String senha, String tipo, List<Backup> backupList, List<Treinador> treinadorList) {
         this.id = id;
+        this.codigo = codigo;
+        this.senha = senha;
+        this.tipo = tipo;
+        this.backupList = backupList;
+        this.treinadorList = treinadorList;
     }
 
     public Usuario(Long id, String codigo, String senha, String tipo) {
