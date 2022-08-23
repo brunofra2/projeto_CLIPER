@@ -27,7 +27,7 @@ public class Domicilio{
     private String cnpj;
     @Column(length = 50)
     private String cnae;
-    @OneToMany(mappedBy = "domicilioId", fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "idDomicilio", fetch = FetchType.LAZY)
     private List<Funcao> funcaoList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idDomicilio", fetch = FetchType.LAZY)
     private List<Lotacao> lotacaoList;

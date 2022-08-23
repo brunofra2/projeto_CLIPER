@@ -40,8 +40,8 @@ public class Treinador implements Serializable {
     @JoinColumn(name = "usuario_id", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
     private Usuario usuarioId;
-    @JoinColumn(name = "id_setor", referencedColumnName = "id")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_setor", referencedColumnName = "id_setor", nullable = false)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Setor idSetor;
 
     public Treinador() {

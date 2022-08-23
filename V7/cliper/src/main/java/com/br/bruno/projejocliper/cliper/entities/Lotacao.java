@@ -15,11 +15,11 @@ public class Lotacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "id_locacao", nullable = false)
-    private Integer idLocacao;
+    @Column(name = "id_lotacao", nullable = false)
+    private Integer idLotacao;
     @Column(length = 50)
     private String titulo;
-    @OneToMany(mappedBy = "lotacaoId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "idLotacao", fetch = FetchType.LAZY)
     private List<Funcao> funcaoList;
     @JoinColumn(name = "id_domicilio", referencedColumnName = "id_domicilio", nullable = false)
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
@@ -28,16 +28,13 @@ public class Lotacao {
     public Lotacao() {
     }
 
-    public Lotacao(Integer idLocacao) {
-        this.idLocacao = idLocacao;
+
+    public Integer getIdLotacao() {
+        return idLotacao;
     }
 
-    public Integer getIdLocacao() {
-        return idLocacao;
-    }
-
-    public void setIdLocacao(Integer idLocacao) {
-        this.idLocacao = idLocacao;
+    public void setIdLotacao(Integer idLotacao) {
+        this.idLotacao = idLotacao;
     }
 
     public String getTitulo() {
@@ -67,7 +64,7 @@ public class Lotacao {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idLocacao != null ? idLocacao.hashCode() : 0);
+        hash += (idLotacao != null ? idLotacao.hashCode() : 0);
         return hash;
     }
 
@@ -78,7 +75,7 @@ public class Lotacao {
             return false;
         }
         Lotacao other = (Lotacao) object;
-        if ((this.idLocacao == null && other.idLocacao != null) || (this.idLocacao != null && !this.idLocacao.equals(other.idLocacao))) {
+        if ((this.idLotacao == null && other.idLotacao != null) || (this.idLotacao != null && !this.idLotacao.equals(other.idLotacao))) {
             return false;
         }
         return true;
@@ -86,7 +83,7 @@ public class Lotacao {
 
     @Override
     public String toString() {
-        return "bac.com.br.hibernate.entidade.Lotacao[ idLocacao=" + idLocacao + " ]";
+        return "bac.com.br.hibernate.entidade.Lotacao[ idLocacao=" + idLotacao + " ]";
     }
     
 }

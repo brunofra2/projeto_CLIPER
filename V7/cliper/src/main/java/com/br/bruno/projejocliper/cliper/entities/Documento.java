@@ -33,8 +33,8 @@ public class Documento {
     private List<Treinamento> treinamentoList;
     @ManyToMany(mappedBy = "documentoList", fetch = FetchType.LAZY)
     private List<Descricao> descricaoList;
-    @JoinColumn(name = "setor_id", referencedColumnName = "id")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_setor", referencedColumnName = "id_setor", nullable = false)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Setor setorId;
     @JoinColumn(name = "tipo_treinamento_id", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)

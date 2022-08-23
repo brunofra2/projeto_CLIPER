@@ -86,8 +86,8 @@ public class Descricao implements Serializable {
     @JoinColumn(name = "id_funcao_id", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
     private Funcao idFuncaoId;
-    @JoinColumn(name = "id_setor_id", referencedColumnName = "id")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_setor", referencedColumnName = "id_setor", nullable = false)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Setor idSetorId;
 
     public Descricao() {

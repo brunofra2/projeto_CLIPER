@@ -16,8 +16,8 @@ public class Setor  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(nullable = false)
-    private Long id;
+    @Column(nullable = false, name = "id_setor")
+    private Long idSetor;
     @Basic(optional = false)
     @Column(nullable = false, length = 100)
     private String responsavel;
@@ -32,7 +32,7 @@ public class Setor  {
     @Column(name = "nome_setor", nullable = false, length = 100)
     private String nomeSetor;
     
-    @OneToMany(mappedBy = "setorId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "idSetor", fetch = FetchType.LAZY)
     private List<Funcao> funcaoList;
     @OneToMany(mappedBy = "setorId", fetch = FetchType.LAZY)
     private List<Documento> documentoList;
@@ -44,23 +44,20 @@ public class Setor  {
     public Setor() {
     }
 
-    public Setor(Long id) {
-        this.id = id;
-    }
 
     public Setor(Long id, String nomeSetor, String responsavel, String email) {
-        this.id = id;
+        this.idSetor = id;
         this.nomeSetor = nomeSetor;
         this.responsavel = responsavel;
         this.email = email;
     }
 
-    public Long getId() {
-        return id;
+    public Long getIdSetor() {
+        return idSetor;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdSetor(Long idSetor) {
+        this.idSetor = idSetor;
     }
 
     public String getNomeSetor() {
@@ -122,7 +119,7 @@ public class Setor  {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (idSetor != null ? idSetor.hashCode() : 0);
         return hash;
     }
 
@@ -133,7 +130,7 @@ public class Setor  {
             return false;
         }
         Setor other = (Setor) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.idSetor == null && other.idSetor != null) || (this.idSetor != null && !this.idSetor.equals(other.idSetor))) {
             return false;
         }
         return true;
@@ -141,12 +138,12 @@ public class Setor  {
 
     @Override
     public String toString() {
-        return "bac.com.br.hibernate.entidade.Setor[ id=" + id + " ]";
+        return "bac.com.br.hibernate.entidade.Setor[ id=" + idSetor + " ]";
     }
 
 
     public Setor(Long id, String responsavel, String email) {
-        this.id = id;
+        this.idSetor = id;
         this.responsavel = responsavel;
         this.email = email;
     }
