@@ -1,7 +1,7 @@
 package com.br.bruno.projejocliper.cliper.exceptions.handler;
 
-import br.com.erudio.exceptions.ExceptionResponse;
-import br.com.erudio.exceptions.ResourceNotFoundException;
+import com.br.bruno.projejocliper.cliper.exceptions.ExceptionResponse;
+import com.br.bruno.projejocliper.cliper.exceptions.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

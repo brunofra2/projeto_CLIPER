@@ -46,8 +46,6 @@ public class UsuarioService {
         entity.setCodigo(usuario.getCodigo());
         entity.setTipo(usuario.getTipo());
         entity.setSenha(usuario.getSenha());
-        entity.setBackupList(usuario.getBackupList());
-        entity.setTreinadorList(usuario.getTreinadorList());
         var vo = DozerMapper.parseObject(usuarioRepository.save(entity),UsuarioDto.class);
         return  vo;
     }
